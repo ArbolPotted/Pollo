@@ -85,6 +85,6 @@ void saltar(){
 						rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
 		if(Mathf.Abs(velocity) < maxSpeed) //este if aplica la velocidad al pollo
 				rigidbody2D.AddForce(new Vector2(fuerza,0));
-				
 		}
+
 }

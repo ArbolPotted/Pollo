@@ -11,6 +11,7 @@ public class pasarNivel2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
 	}
 	public void Iniciar () {
 		Application.LoadLevel ("proyecto2");
