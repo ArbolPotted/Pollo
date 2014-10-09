@@ -12,7 +12,7 @@ public class jumpScript : MonoBehaviour {
 	public AudioClip sonidoHerido;
 	public AudioClip sonidoCurado;
 
-	private bool estaHerido = false; //Nueva variable para saber si pollo esta herido o no
+	public bool estaHerido = false; //Nueva variable para saber si pollo esta herido o no
 
 
 	Animator animation; // Necesario para manejar las animaciones
@@ -70,6 +70,9 @@ void saltar(){
 						damage ();
 		if (coll.gameObject.tag == "Curar") //Cuando tocamos sombrero se produce curar al pollo
 						curaHat ();
+		if ((estaHerido == true) & (coll.gameObject.tag == "Enemy"))
+						reiniciar ();
+
 		}
 		
 
@@ -86,5 +89,11 @@ void saltar(){
 		if(Mathf.Abs(velocity) < maxSpeed) //este if aplica la velocidad al pollo
 				rigidbody2D.AddForce(new Vector2(fuerza,0));
 		}
+
+		public void reiniciar (){
+		Application.LoadLevel ("menu");
+		}
+
+
 
 }
