@@ -14,6 +14,10 @@ public class jumpScript : MonoBehaviour {
 
 	public bool estaHerido = false; //Nueva variable para saber si pollo esta herido o no
 
+	public void reiniciar (){
+		Application.LoadLevel ("menu");
+	}
+
 
 	Animator animation; // Necesario para manejar las animaciones
 	
@@ -70,10 +74,11 @@ void saltar(){
 						damage ();
 		if (coll.gameObject.tag == "Curar") //Cuando tocamos sombrero se produce curar al pollo
 						curaHat ();
-		if ((estaHerido == true) & (coll.gameObject.tag == "Enemy"))
+		if ((estaHerido == true) & (coll.gameObject.tag == "Enemy") || (coll.gameObject.tag == "abismo"))
 						reiniciar ();
 
 		}
+
 		
 
 	/*Funcion Mover
@@ -89,11 +94,5 @@ void saltar(){
 		if(Mathf.Abs(velocity) < maxSpeed) //este if aplica la velocidad al pollo
 				rigidbody2D.AddForce(new Vector2(fuerza,0));
 		}
-
-		public void reiniciar (){
-		Application.LoadLevel ("menu");
-		}
-
-
 
 }
