@@ -13,6 +13,5 @@ public class pasarNivel2 : MonoBehaviour {
 	
 
 	}
-	public void Iniciar () {
-		Application.LoadLevel ("proyecto2");
+
 }
